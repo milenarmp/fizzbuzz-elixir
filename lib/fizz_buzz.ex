@@ -25,6 +25,7 @@ defmodule FizzBuzz do
 
   defp convert_and_evaluate(elem) do
     elem
+    |> String.trim()
     |> String.to_integer()
     |> evaluate_number()
   end
