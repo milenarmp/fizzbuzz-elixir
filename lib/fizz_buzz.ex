@@ -1,4 +1,11 @@
 defmodule FizzBuzz do
+  @moduledoc """
+  Implementação do FizzBuzz que lê números de um arquivo.
+  """
+
+  @doc """
+  Lê um arquivo com números separados por vírgula e aplica as regras do FizzBuzz.
+  """
   def build(file_name) do
     file_name
     |> File.read()
@@ -6,9 +13,10 @@ defmodule FizzBuzz do
   end
 
   defp handle_file_read({:ok, result}) do
-    response = result
-    |> String.split(",")
-    |> Enum.map(&convert_and_evaluate/1)
+    response =
+      result
+      |> String.split(",")
+      |> Enum.map(&convert_and_evaluate/1)
 
     {:ok, response}
   end
